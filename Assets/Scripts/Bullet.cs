@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class Bullet : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Shooting>().EnemyKilled();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+
+            if(GameObject.FindGameObjectWithTag("Player").GetComponent<Shooting>().killCount >= 8)
+            {
+                SceneManager.LoadScene(3);
+            }
         }
 
         else if (collision.gameObject.CompareTag("Structure"))

@@ -26,6 +26,6 @@ public class Shooting : MonoBehaviour
     public void EnemyKilled()
     {
         killCount++;
-        killCountUI.text = killCount.ToString();   
+        killCountUI.text = "Kills: " + killCount.ToString();   
     }
 }

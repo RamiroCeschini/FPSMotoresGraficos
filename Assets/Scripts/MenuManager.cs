@@ -5,8 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-   public void PlayGame()
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void PlayGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

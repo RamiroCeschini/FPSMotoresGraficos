@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject SceneController;
     private void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("tocó");
-            SceneManager.LoadScene(2);
+            SceneController.GetComponent<MenuManager>().GameOver();
         }
     }
 }
